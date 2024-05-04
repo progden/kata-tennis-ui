@@ -1,9 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite + Vitest
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Domain Model + UI Component
+
+針對核心的業務邏輯，使用 Domain Model 來描述，並且使用 Unit Tests 來驗證。
+
+明確 UI 元件與 Domain Model 的分工，讓 UI 元件專注於 UI 的呈現，而 Domain Model 專注於業務邏輯的實作。
+
+在這邊的例子，可以說減少對 Vue 元件的倚賴，若系統需要切換到其他框架，只需要調整 UI 元件即可。
+
+## Unit Test in Vitest
+
+使用 Vitest 來撰寫 Unit Test
+也適用了不少 Vitest API 特性來撰寫測試
 
 ## Recommended Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+執行以下指令，安裝相依套件，並且啟動開發伺服器
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+```shell
+yarn
+yarn dev
+``` 
+
+執行以下指令，執行單元測試
+
+```shell
+yarn test
+```
